@@ -1,6 +1,6 @@
 // Instructor Provided File | Time Concerns
 let db;
-const request = indexedDB.open("budget", 1);
+const request = indexedDB.open("BudgetDB", 1);
 
 request.onupgradeneeded = ({ target }) => {
   let db = target.result;
