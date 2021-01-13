@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const cacheName = 'transactions';
 const DATA_CACHE = 'data-cache';
 
 const FILES_TO_CACHE = [
