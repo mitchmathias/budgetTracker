@@ -9,6 +9,7 @@ const FILES_TO_CACHE = [
     "/index.html",
     "/index.js",
     "/styles.css",
+    "https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
 ];
 
 
@@ -17,15 +18,15 @@ self.addEventListener("install", event => {
         caches.open(cacheName).then(cache => {
             return cache.addAll(FILES_TO_CACHE);
         })
-    );
-    self.skipWaiting()
+    )
+    .then(() => self.skipWaiting())
 });
 
 
 // activate
 self.addEventListener("activate", function (event) {
     event.waitUntil(
-        caches.keys().then(keyList => {
+        caches.keys(DATA_CACHE).then(keyList => {
             return Promise.all(
                 keyList.map(key => {
                     if (key !== cacheName && key !== DATA_CACHE) {
@@ -35,8 +36,7 @@ self.addEventListener("activate", function (event) {
                 })
             );
         })
-    );
-
+    )
     self.clients.claim();
 });
 
