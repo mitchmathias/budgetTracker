@@ -4,7 +4,6 @@
 
 A website to track expenses that works both online and offline. When using offline all info is stored in a cache and rendered back into the page after returning online.
 
-
 ## Usage 
 
 Visit the Website https://dashboard.heroku.com/apps/secure-depths-32919
@@ -15,7 +14,12 @@ Mitch Mathias
 
 ## Test 
 
-Dev tools
+Dev tools, Service Worker
+
+# Images
+
+![screenshot](BudgetTracker.png)
+
 
 ## Questions 
 
